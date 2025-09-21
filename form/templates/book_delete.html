@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<title>Form Author</title>
+{% block content %}
+<main>
+<h1>Really want you delete is "{{book.name}}" ???</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" style="color: darkgoldenrod;">Yes</button>
+    <button style="color: aqua;"><a href="{% url 'books' %}" >No</a></button>
+</form>
+</main>
+{% endblock %}

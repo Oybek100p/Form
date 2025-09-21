@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<title>Book List</title>
+{% block content %}
+<main class="container">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Book List</h1>
+    <a href="{% url 'book_add' %}" class="btn btn-primary fw-bold">+ Add Book</a>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Author</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+      <tr>
+        <th scope="row">{{ book.id }}</th>
+        <td>{{ book.name }}</td>
+        <td style="color: blue;">{{ book.price }} so'm</td>
+        <td>{{ book.author.name }} {{ book.author.surname }}</td>
+        <td><a href="{% url 'book_delete' book.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+        <td><a href="{% url 'book_update' book.id %}" class="btn btn-warning btn-sm">Update</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+{% endblock %}

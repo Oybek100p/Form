@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #fceabb, #f8b500);">
+  <div class="container">
+    <!-- LOGO tugma -->
+    <a class="btn btn-primary fw-bold fs-4 me-3 " href="{% url 'logo' %}">LOGO</a>
+
+    <!-- Toggle button (mobil) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linklar o‘ng tomonda -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="btn btn-success fw-bold fs-5 mx-5" href="{% url 'authors' %}">Authors</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-success fw-bold fs-5 mx-0" href="{% url 'books' %}">Books</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <h1>-------------------------------------------------------------------------------------------</h1>
+    {% block content %}{% endblock %}
+    <h1></h1>
+</body>
+<h1 style="color: cadetblue;">-------------------------------------------------------------------------------------------</h1>
+<footer 
+class="container" style="color: blueviolet;"># LIBRARY 2025</footer>
+<h1 style="color: cadetblue;">-------------------------------------------------------------------------------------------</h1>
+
+</html>

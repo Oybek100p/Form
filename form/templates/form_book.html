@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<title>Form Book</title>
+{% block content %}
+<main>
+<h1>Form Book</h1>
+<form class="container" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button style="color: forestgreen;" type="submit"> SAVE</button>
+    <button ><a style="color: brown;" href="{% url 'books' %}" >Back</a></button>
+</form>
+</main>
+{% endblock %}
